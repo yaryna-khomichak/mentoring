@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { FruitData } from 'src/app/models/fruit-data.model';
 
 @Component({
   selector: 'app-observable',
   templateUrl: './observable.component.html',
   styleUrls: ['./observable.component.scss']
 })
-export class ObservableComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class ObservableComponent {
+  @Input() public fruitsData: FruitData[];
 }
