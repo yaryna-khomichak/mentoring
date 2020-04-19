@@ -6,8 +6,8 @@ import { FruitData } from 'src/app/models/fruit-data.model';
 @Component({
   selector: 'app-observable-continer',
   template: `<app-observable
-        [fruitsData]="fruitsData$ | async"
-    ></app-observable>`
+    [fruitsData]="fruitsData$ | async"
+  ></app-observable>`
 })
 export class ObservableContainerComponent {
   public fruitsData$: Observable<FruitData[]>;

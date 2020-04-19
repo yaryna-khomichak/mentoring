@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-around">
+  <button *ngFor="let method of paymentMethods"
+    type="button" 
+    class="btn btn-outline-primary"
+    [class.active]="method === strategy"
+    (click)="setStrategy(method)">
+    {{ method }}
+  </button>
+</div>
+
+<div *ngIf="strategy"
+  class="alert alert-primary d-flex justify-content-center mt-3">
+  {{ paymentMethodMessage }}
+</div>
