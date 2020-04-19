@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ObservableComponent } from './components/observable/observable.component';
 import { ObservableContainerComponent } from './components/observable.container';
+import { StrategyComponent } from './components/strategy/strategy.component';
+import { StrategyContainerComponent } from './components/strategy.container';
 
 @NgModule({
   declarations: [
     AppComponent,
     ObservableComponent,
     ObservableContainerComponent,
+    StrategyComponent,
+    StrategyContainerComponent,
   ],
   imports: [
     BrowserModule,
