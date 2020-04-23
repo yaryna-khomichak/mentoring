@@ -7,6 +7,8 @@ import { ObservableComponent } from './components/observable/observable.componen
 import { ObservableContainerComponent } from './components/observable.container';
 import { StrategyComponent } from './components/strategy/strategy.component';
 import { StrategyContainerComponent } from './components/strategy.container';
+import { DecoratorComponent } from './components/decorator/decorator.component';
+import { FacadeComponent } from './components/facade/facade.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { StrategyContainerComponent } from './components/strategy.container';
     ObservableContainerComponent,
     StrategyComponent,
     StrategyContainerComponent,
+    DecoratorComponent,
+    FacadeComponent,
   ],
   imports: [
     BrowserModule,

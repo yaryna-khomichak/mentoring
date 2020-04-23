@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ObservableComponent } from './components/observable/observable.component';
 import { ObservableContainerComponent } from './components/observable.container';
 import { StrategyContainerComponent } from './components/strategy.container';
+import { DecoratorComponent } from './components/decorator/decorator.component';
+import { FacadeComponent } from './components/facade/facade.component';
 
 const routes: Routes = [
   {
@@ -10,6 +12,12 @@ const routes: Routes = [
   },
   {
     path: 'strategy', component: StrategyContainerComponent,
+  },
+  {
+    path: 'decorator', component: DecoratorComponent,
+  },
+  {
+    path: 'facade', component: FacadeComponent,
   },
 ];
 
