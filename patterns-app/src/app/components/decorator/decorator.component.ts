@@ -40,6 +40,12 @@ export class DecoratorComponent implements OnInit {
       console.log('We decorated: ', target);
     }
 
+    function enumerable(value: boolean) {
+      return (target: any, propertyKey: string, descriptor: PropertyDescriptor) => {
+          descriptor.enumerable = value;
+      };
+    }
+
     @extraInfo
     class User {
       name: string;
@@ -48,10 +54,17 @@ export class DecoratorComponent implements OnInit {
         this.name = name;
         this.age = age;
       }
+
+      @enumerable(false)
+      greeting() {
+        return `My name is ${this.name}`;
+      }
     }
 
     const bob = new User('Bob', 20);
     console.log(bob);
+    for (const key in bob) {
+      console.log(`key: ${key}`);
+    }
   }
-
 }
