@@ -1,48 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { UserFacade } from 'src/app/services/facade.service';
+import { Observable } from 'rxjs';
+import { User } from 'src/app/models/user.interface';
 
 @Component({
-  selector: 'app-facade',
-  templateUrl: './facade.component.html',
+	selector: 'app-facade',
+	templateUrl: './facade.component.html',
 })
-export class FacadeComponent implements OnInit {
+export class FacadeComponent {
+	public pagination = this.users.pagination;
+	public users$: Observable<User[]>;
 
-  constructor() { }
+	constructor(public users: UserFacade) { }
 
-  ngOnInit() {
-    class Bank {
-      verify(amount: number) {
-        return amount < 10000 ? 'approved' : 'denied';
-      }
-    }
+	public searchText(searchText: string) {
+		this.users.updateSearchText(searchText);
+	}
 
-    class CreditAvailability {
-      check(age: number, income: number) {
-        return (age >= 18 && income >= 1000)
-          ? 'available'
-          : 'not available';
-      }
-    }
-
-    class Credit {
-      name: string;
-      age: number;
-      income: number;
-      constructor(name: string, age: number, income: number) {
-        this.name = name;
-        this.age = age;
-      }
-
-      applyFor(amount: number) {
-        const bankResult = new Bank().verify(amount);
-        const creditAvailability = new CreditAvailability().check(this.age, this.income);
-
-        return `The bank ${bankResult} a ${amount}$ loan. \nCredit is ${creditAvailability} for ${this.name}.`;
-      }
-    }
-
-    const user = new Credit('John', 20, 1500);
-    const credit = user.applyFor(5000);
-    console.log(credit);
-  }
-
+	updatePagination(pageSize: number) {
+		this.users.updatePagination(pageSize);
+		this.pagination = this.users.pagination;
+		this.users$ = this.users.findAllUsers();
+	}
 }

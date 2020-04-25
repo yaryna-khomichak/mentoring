@@ -7,22 +7,22 @@ import { DecoratorComponent } from './components/decorator/decorator.component';
 import { FacadeComponent } from './components/facade/facade.component';
 
 const routes: Routes = [
-  {
-    path: 'observable', component: ObservableContainerComponent,
-  },
-  {
-    path: 'strategy', component: StrategyContainerComponent,
-  },
-  {
-    path: 'decorator', component: DecoratorComponent,
-  },
-  {
-    path: 'facade', component: FacadeComponent,
-  },
+	{
+		path: 'observable', component: ObservableContainerComponent,
+	},
+	{
+		path: 'strategy', component: StrategyContainerComponent,
+	},
+	{
+		path: 'decorator', component: DecoratorComponent,
+	},
+	{
+		path: 'facade', component: FacadeComponent,
+	},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,3 +1,35 @@
-<p>
-  facade works!
-</p>
+<div class="mb-2">
+  <span class="mr-4">
+    Set items per table:
+  </span>
+  <button *ngFor="let pageSize of pagination.tableSize" 
+    class="btn btn-outline-primary mr-2"
+    [class.active]="pageSize === pagination.selectedSize" 
+    (click)="updatePagination(pageSize)">
+    {{pageSize}}
+  </button>
+</div>
+
+<input type="text" 
+  class="form-control mb-2" 
+  placeholder="Search person by Last Name"
+  (input)="searchText($event.target.value)">
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>GENDER</th>
+      <th>FIRST NAME</th>
+      <th>LAST NAME</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let u of users$ | async; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{u.gender}}</td>
+      <td>{{u.name.first}}</td>
+      <td>{{u.name.last}}</td>
+    </tr>
+  </tbody>
+</table>

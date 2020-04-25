@@ -9,22 +9,24 @@ import { StrategyComponent } from './components/strategy/strategy.component';
 import { StrategyContainerComponent } from './components/strategy.container';
 import { DecoratorComponent } from './components/decorator/decorator.component';
 import { FacadeComponent } from './components/facade/facade.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ObservableComponent,
-    ObservableContainerComponent,
-    StrategyComponent,
-    StrategyContainerComponent,
-    DecoratorComponent,
-    FacadeComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		ObservableComponent,
+		ObservableContainerComponent,
+		StrategyComponent,
+		StrategyContainerComponent,
+		DecoratorComponent,
+		FacadeComponent,
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		HttpClientModule,
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
