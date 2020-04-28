@@ -5,6 +5,7 @@ import { ObservableContainerComponent } from './components/observable.container'
 import { StrategyContainerComponent } from './components/strategy.container';
 import { DecoratorComponent } from './components/decorator/decorator.component';
 import { FacadeComponent } from './components/facade/facade.component';
+import { FactoryComponent } from './components/factory/factory.component';
 
 const routes: Routes = [
 	{
@@ -19,6 +20,9 @@ const routes: Routes = [
 	{
 		path: 'facade', component: FacadeComponent,
 	},
+	{
+		path: 'factory', component: FactoryComponent,
+	}
 ];
 
 @NgModule({

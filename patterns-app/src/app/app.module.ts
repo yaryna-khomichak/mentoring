@@ -10,6 +10,7 @@ import { StrategyContainerComponent } from './components/strategy.container';
 import { DecoratorComponent } from './components/decorator/decorator.component';
 import { FacadeComponent } from './components/facade/facade.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FactoryComponent } from './components/factory/factory.component';
 
 @NgModule({
 	declarations: [
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 		StrategyContainerComponent,
 		DecoratorComponent,
 		FacadeComponent,
+		FactoryComponent,
 	],
 	imports: [
 		BrowserModule,
