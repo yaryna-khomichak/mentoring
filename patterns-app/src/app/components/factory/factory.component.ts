@@ -9,7 +9,6 @@ export class FactoryComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
-
 		abstract class Car {
 			engine: string;
 			abstract start(): boolean;
@@ -108,6 +107,6 @@ export class FactoryComponent implements OnInit {
 
 		const carFact = CarFactoryProducer.getCarFactory('toyota');
 		const car = carFact.createCar(CarType.Diesel);
-		console.log('The brand machines is ' + carFact.brand + ' and it has ' + car.engine + ' engine.');
+		console.log('The brand of machines is ' + carFact.brand + ' and it has ' + car.engine + ' engine.');
 	}
 }
