@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,9 @@ import { DecoratorComponent } from './components/decorator/decorator.component';
 import { FacadeComponent } from './components/facade/facade.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FactoryComponent } from './components/factory/factory.component';
+import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
+import { ReactiveFormComponent } from './components/registration-page/reactive-form/reactive-form.component';
+import { TemplateDrivenFormComponent } from './components/registration-page/template-driven-form/template-driven-form.component';
 
 @NgModule({
 	declarations: [
@@ -22,11 +26,15 @@ import { FactoryComponent } from './components/factory/factory.component';
 		DecoratorComponent,
 		FacadeComponent,
 		FactoryComponent,
+		RegistrationPageComponent,
+		ReactiveFormComponent,
+		TemplateDrivenFormComponent,
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		HttpClientModule,
+		FormsModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]
