@@ -10,20 +10,20 @@
     name="email" 
     required 
     email
-    #ngemail="ngModel"
-    [(ngModel)]="email">
-  <div *ngIf="!ngemail.valid && ngemail.touched"
+    #email="ngModel"
+    [(ngModel)]="user.email">
+  <div *ngIf="!email.valid && email.touched"
     class="alert alert-danger">
     Email is required
   </div>
   <input type="password" 
     class="form-control mb-1" 
     placeholder="Password" 
-    name="password" 
+    name="user.password" 
     required
-    #ngpassword="ngModel"
-    [(ngModel)]="password">
-  <div *ngIf="!ngpassword.valid && ngpassword.touched"
+    #password="ngModel"
+    [(ngModel)]="user.password">
+  <div *ngIf="!password.valid && password.touched"
     class="alert alert-danger">
     Password is required
   </div>
@@ -32,9 +32,9 @@
     placeholder="First Name" 
     name="firstName" 
     required
-    #ngfirstName="ngModel"
-    [(ngModel)]="firstName">
-  <div *ngIf="!ngfirstName.valid && ngfirstName.touched"
+    #firstName="ngModel"
+    [(ngModel)]="user.firstName">
+  <div *ngIf="!firstName.valid && firstName.touched"
     class="alert alert-danger">
     First name is required
   </div>
@@ -43,16 +43,16 @@
     placeholder="Last Name" 
     name="lastName" 
     required 
-    #nglastName="ngModel"
-    [(ngModel)]="lastName">
-  <div *ngIf="!nglastName.valid && nglastName.touched"
+    #lastName="ngModel"
+    [(ngModel)]="user.lastName">
+  <div *ngIf="!lastName.valid && lastName.touched"
     class="alert alert-danger">
     Last name is required
   </div>
   <button type="submit" 
     class="btn btn-primary" 
     [disabled]="!f.form.valid" 
-    (click)="addUser(f.value);f.reset()">
+    (click)="addUser();f.reset()">
     Submit
   </button>
 </form>
