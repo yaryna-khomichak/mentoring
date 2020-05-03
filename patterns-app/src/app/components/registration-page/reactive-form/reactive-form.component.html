@@ -1,3 +1,49 @@
 <p>
   Reactive Form
 </p>
+<form [formGroup]="myForm" 
+  class="d-flex flex-column"
+  (ngSubmit)="onSubmit()">
+  <input type="email" 
+    class="form-control mb-1" 
+    placeholder="Email" 
+    name="email" 
+    formControlName="email">
+  <div *ngIf="myForm.controls['email'].invalid && myForm.controls['email'].touched"
+    class="alert alert-danger">
+    Email is required
+  </div>
+  <input type="password" 
+    class="form-control mb-1" 
+    placeholder="Password" 
+    name="password" 
+    formControlName="password">
+  <div *ngIf="myForm.controls['password'].invalid && myForm.controls['password'].touched"
+    class="alert alert-danger">
+    Password is required
+  </div>
+  <input type="text" 
+    class="form-control mb-1" 
+    placeholder="First Name" 
+    name="firstName" 
+    formControlName="firstName">
+  <div *ngIf="myForm.controls['firstName'].invalid && myForm.controls['firstName'].touched"
+    class="alert alert-danger">
+    First name is required
+  </div>
+  <input type="text" 
+    class="form-control mb-1" 
+    placeholder="Last Name" 
+    name="lastName" 
+    formControlName="lastName">
+  <div *ngIf="myForm.controls['lastName'].invalid && myForm.controls['lastName'].touched"
+    class="alert alert-danger">
+    Last name is required
+  </div>
+  <button type="submit" 
+    class="btn btn-primary" 
+    [disabled]="myForm.invalid" 
+    (click)="addUser();myForm.reset()">
+    Submit
+  </button>
+</form>
