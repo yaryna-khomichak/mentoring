@@ -15,6 +15,7 @@ import { FactoryComponent } from './components/factory/factory.component';
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
 import { ReactiveFormComponent } from './components/registration-page/reactive-form/reactive-form.component';
 import { TemplateDrivenFormComponent } from './components/registration-page/template-driven-form/template-driven-form.component';
+import { CustomSelectComponent } from './components/registration-page/custom-select';
 
 @NgModule({
 	declarations: [
@@ -29,6 +30,7 @@ import { TemplateDrivenFormComponent } from './components/registration-page/temp
 		RegistrationPageComponent,
 		ReactiveFormComponent,
 		TemplateDrivenFormComponent,
+		CustomSelectComponent,
 	],
 	imports: [
 		BrowserModule,

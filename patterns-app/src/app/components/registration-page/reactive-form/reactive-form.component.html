@@ -40,6 +40,12 @@
     class="alert alert-danger">
     Last name is required
   </div>
+  <app-custom-select
+    class="mb-1" 
+    formControlName="gender" 
+    defaultText="Select gender" 
+    [items]="genders">
+  </app-custom-select>
   <button type="submit" 
     class="btn btn-primary" 
     [disabled]="myForm.invalid" 

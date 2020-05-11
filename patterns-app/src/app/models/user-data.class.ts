@@ -4,5 +4,6 @@ export class UserData {
 		public password: string,
 		public firstName: string,
 		public lastName: string,
+		public gender?: string,
 	) { }
 }

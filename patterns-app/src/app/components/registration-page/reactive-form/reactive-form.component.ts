@@ -19,6 +19,7 @@ export class ReactiveFormComponent {
 	// 	lastName: new FormControl('', Validators.required)
 	// });
 	public myForm: FormGroup;
+	public genders = ['male', 'female'];
 
 	constructor(
 		private registrationPageService: RegistrationPageService,
@@ -28,13 +29,19 @@ export class ReactiveFormComponent {
 			password: ['', [Validators.required]],
 			firstName: ['', [Validators.required]],
 			lastName: ['', Validators.required],
+			gender: ['', Validators.required],
 		});
 	}
 
 	public addUser() {
 		this.registrationPageService.addUser(
-			new UserData(this.myForm.value.email, this.myForm.value.password, this.myForm.value.firstName, this.myForm.value.lastName));
-	}
+			new UserData(
+				this.myForm.value.email,
+				this.myForm.value.password,
+				this.myForm.value.firstName,
+				this.myForm.value.lastName,
+				this.myForm.value.gender));
+			}
 
 	public onSubmit() { }
 }
