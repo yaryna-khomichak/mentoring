@@ -16,6 +16,8 @@ import { RegistrationPageComponent } from './components/registration-page/regist
 import { ReactiveFormComponent } from './components/registration-page/reactive-form/reactive-form.component';
 import { TemplateDrivenFormComponent } from './components/registration-page/template-driven-form/template-driven-form.component';
 import { CustomSelectComponent } from './components/registration-page/custom-select';
+import { ExitRegistrationGuard } from './guards/exit-registration.guard';
+import { FacadeGuard } from './guards/facade-switch.guard';
 
 @NgModule({
 	declarations: [
@@ -39,7 +41,7 @@ import { CustomSelectComponent } from './components/registration-page/custom-sel
 		FormsModule,
 		ReactiveFormsModule,
 	],
-	providers: [],
+	providers: [ExitRegistrationGuard, FacadeGuard],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

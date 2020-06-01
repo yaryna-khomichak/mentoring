@@ -1,4 +1,9 @@
-<div class="d-flex">
+<div class="d-flex mb-2">
   <app-reactive-form class="flex-grow-1 px-1"></app-reactive-form>
   <app-template-driven-form class="flex-grow-1 px-1"></app-template-driven-form>
 </div>
+<button class="btn"
+  [ngClass]="{'btn-danger': !saved, 'btn-success': saved}"
+  (click)="save()">
+  Save
+</button>
